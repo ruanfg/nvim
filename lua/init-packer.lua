@@ -3,7 +3,8 @@ return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
 
   -- Github Theme
-  use "projekt0n/github-nvim-theme"
+  -- use "projekt0n/github-nvim-theme"
+  use 'marko-cerovac/material.nvim'
 
   -- Collection of configurations for built-in LSP client
   use 'neovim/nvim-lspconfig' 
@@ -40,8 +41,8 @@ return require('packer').startup(function()
 
   -- Statusline
   use {
-      'feline-nvim/feline.nvim',
-      config = function() require('feline').setup{} end
+      'nvim-lualine/lualine.nvim',
+      requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
 
   -- git signs
