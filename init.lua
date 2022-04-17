@@ -28,3 +28,11 @@ vim.o.smartindent = true
 vim.o.termguicolors = true
 vim.o.cursorline = true
 vim.g.mapleader = ' '
+
+-- markdown config
+-- vim.g.mkdp_auto_start = true
+-- vim.g.mkdp_echo_preview_url = true
+vim.g.mkdp_browser = '/usr/bin/chromium'
+vim.g.mkdp_page_title = '「${name}」'
+vim.g.mkdp_markdown_css = '/home/ryan/Software/markdown-theme/DrakeTyporaTheme-master/drake-juejin.css'
+

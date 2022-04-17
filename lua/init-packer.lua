@@ -27,14 +27,13 @@ return require('packer').startup(function()
       requires = {
           'kyazdani42/nvim-web-devicons', -- optional, for file icon
       },
-      config = function() require'nvim-tree'.setup {
-          auto_close = true
-      } end
+      config = function() require'nvim-tree'.setup {} end
   }
 
   -- Tabline
   use {
       'akinsho/bufferline.nvim', 
+      tag = "*",
       requires = 'kyazdani42/nvim-web-devicons',
       config = function() require("bufferline").setup{} end
   }
@@ -54,4 +53,13 @@ return require('packer').startup(function()
       config = function() require('gitsigns').setup() end
   }
 
+  -- markdown preview
+  -- use 'iamcco/markdown-preview.nvim'
+  use {
+      'iamcco/markdown-preview.nvim',
+      run = function() vim.fn['mkdp#util#install']() end,
+      ft = {'markdown'}
+  }
+  
+  use {"akinsho/toggleterm.nvim"}
 end)
