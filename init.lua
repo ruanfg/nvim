@@ -1,12 +1,15 @@
-require('init-packer')
-require('init-lsp')
+require('user.packer')
+require('user.keymaps')
+
+require('user.conf')
+require('user.lsp.init-lsp')
 
 -- material theme config
 vim.g.material_style = "darker"
 require('material').setup({
-    disable = {
-        background = true
-    },
+--    disable = {
+--        background = true
+--    },
     lualine_style = 'stealth'
 })
 vim.cmd 'colorscheme material'
