@@ -4,11 +4,11 @@ local fn = vim.fn
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
   packer_bootstrap = fn.system({
-      'git', 
-      'clone', 
-      '--depth', 
-      '1', 
-      'https://github.com/wbthomason/packer.nvim', 
+      'git',
+      'clone',
+      '--depth',
+      '1',
+      'https://github.com/wbthomason/packer.nvim',
       install_path
   })
 end
@@ -29,7 +29,12 @@ end
 
 return require('packer').startup(function()
   -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
+  use "wbthomason/packer.nvim"
+
+  -- My plugins here
+  use "akinsho/toggleterm.nvim"
+  use "kyazdani42/nvim-tree.lua" -- File Explorer
+  use "kyazdani42/nvim-web-devicons"
 
   -- Enhance Editor
   use 'windwp/nvim-autopairs'
@@ -39,31 +44,23 @@ return require('packer').startup(function()
 
   -- LSP
   use 'neovim/nvim-lspconfig' -- enable LSP
+  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
 
   -- cmp plugins
-  use 'hrsh7th/nvim-cmp' -- The completion plugin 
+  use 'hrsh7th/nvim-cmp' -- The completion plugin
 
   -- LSP source for nvim-cmp
-  use 'hrsh7th/cmp-nvim-lsp' 
+  use 'hrsh7th/cmp-nvim-lsp'
 
   -- Snippets source for nvim-cmp
-  use 'saadparwaiz1/cmp_luasnip' 
+  use 'saadparwaiz1/cmp_luasnip'
 
   -- Snippets plugin
-  use 'L3MON4D3/LuaSnip' 
-
-  -- A File Explorer For Neovim Written In Lua
-  use {
-      'kyazdani42/nvim-tree.lua',
-      requires = {
-          'kyazdani42/nvim-web-devicons', -- optional, for file icon
-      },
-      config = function() require'nvim-tree'.setup {} end
-  }
+  use 'L3MON4D3/LuaSnip'
 
   -- Tabline
   use {
-      'akinsho/bufferline.nvim', 
+      'akinsho/bufferline.nvim',
       tag = "*",
       requires = 'kyazdani42/nvim-web-devicons',
       config = function() require("bufferline").setup{} end
@@ -91,15 +88,13 @@ return require('packer').startup(function()
       run = function() vim.fn['mkdp#util#install']() end,
       ft = {'markdown'}
   }
-  
-  use {"akinsho/toggleterm.nvim"}
 
   -- Treesitter
   use {
       "nvim-treesitter/nvim-treesitter",
       run = ":TSUpdate"
   }
-  
+
   -- Telescope
   use {
       'nvim-telescope/telescope.nvim',

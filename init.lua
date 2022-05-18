@@ -1,8 +1,8 @@
-require('user.packer')
+require('user.plugins')
 require('user.keymaps')
 
 require('user.conf')
-require('user.lsp.init-lsp')
+require('user.lsp')
 
 -- material theme config
 vim.g.material_style = "darker"
