@@ -1,4 +1,8 @@
--- NOTE: install ripgrep for live_grep picker
+--[[
+    NOTE:
+        1. install ripgrep for live_grep picker
+        2. install fd for replace find
+--]]
 
 -- ====for live_grep raw====:
 -- for rp usage: reference: https://segmentfault.com/a/1190000016170184
@@ -160,6 +164,7 @@ telescope.setup {
   },
   pickers = {
     find_files = {
+      -- themes: dropdown, ivy, cursor
       theme = "dropdown",
       previewer = false,
       -- find_command = { "find", "-type", "f" },
@@ -206,6 +211,7 @@ telescope.setup {
 
 -- telescope.load_extension("frecency")
 require('telescope').load_extension('fzf')
+require("telescope").load_extension("live_grep_raw")
 --telescope.load_extension("ui-select")
 --telescope.load_extension('dap')
 --telescope.load_extension('vim_bookmarks')

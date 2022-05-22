@@ -32,9 +32,12 @@ return require('packer').startup(function()
   use "wbthomason/packer.nvim"
 
   -- My plugins here
+  use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "akinsho/toggleterm.nvim"
   use "kyazdani42/nvim-tree.lua" -- File Explorer
+  use "goolord/alpha-nvim"
   use "kyazdani42/nvim-web-devicons"
+  use "folke/which-key.nvim" -- which  key
 
   -- Enhance Editor
   use 'windwp/nvim-autopairs'
@@ -75,9 +78,6 @@ return require('packer').startup(function()
   -- git signs
   use {
       'lewis6991/gitsigns.nvim',
-      requires = {
-          'nvim-lua/plenary.nvim'
-      },
       config = function() require('gitsigns').setup() end
   }
 
@@ -96,11 +96,10 @@ return require('packer').startup(function()
   }
 
   -- Telescope
-  use {
-      'nvim-telescope/telescope.nvim',
-      requires = { {'nvim-lua/plenary.nvim'} }
-  }
+  use "nvim-telescope/telescope.nvim"
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  use "ahmedkhalf/project.nvim"
+  use "nvim-telescope/telescope-live-grep-raw.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

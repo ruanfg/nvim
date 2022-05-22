@@ -5,7 +5,7 @@
 -- <BS> will close current opened directory or parent
 -- type a to add a file. Adding a directory requires leaving a leading / at the end of the path.
 -- you can add multiple directories by doing foo/bar/baz/f and it will add foo bar and baz directories and f as a file
--- 
+--
 -- type r to rename a file
 -- type <C-r> to rename a file and omit the filename on input
 -- type x to add/remove file/directory to cut clipboard
@@ -117,8 +117,8 @@ nvim_tree.setup {
     timeout = 500,
   },
   view = {
-    width = 30,
-    height = 30,
+    -- width = 30,
+    -- height = 30,
     side = "left",
     auto_resize = true,
     mappings = {
