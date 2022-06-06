@@ -51,9 +51,7 @@ return require('packer').startup(function()
 
   -- cmp plugins
   use 'hrsh7th/nvim-cmp' -- The completion plugin
-
-  -- LSP source for nvim-cmp
-  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
 
   -- Snippets source for nvim-cmp
   use 'saadparwaiz1/cmp_luasnip'

@@ -3,6 +3,7 @@ require('user.keymaps')
 
 require('user.conf')
 require('user.lsp')
+require('user.lsp.init-lsp')
 
 -- material theme config
 vim.g.material_style = "darker"
@@ -21,16 +22,6 @@ require('lualine').setup {
 
 -- snippet to enable the language server
 require('lspconfig').pyright.setup{}
-
-vim.o.number = true
-vim.o.relativenumber = true
-vim.o.tabstop = 4
-vim.o.shiftwidth = 4
-vim.o.expandtab = true
-vim.o.smartindent = true
-vim.o.termguicolors = true
-vim.o.cursorline = true
-vim.g.mapleader = ' '
 
 -- markdown config
 -- vim.g.mkdp_auto_start = true

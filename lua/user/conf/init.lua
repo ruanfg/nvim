@@ -10,6 +10,7 @@ end
 local M = {}
 
 M.setup = function()
+  require("user.conf.settings").load_defaults()
   local config_dir = vim.fn.stdpath('config') .. '/lua/user/conf'
   -- plugins do not need to load, NOTE: no .lua suffix required
   local unload_plugins = {
